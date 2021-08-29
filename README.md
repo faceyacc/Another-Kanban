@@ -1,3 +1,2 @@
 # Another-Kanban
-a simple Trello clone to learn Typescript
-kds
+a simple Trello clone to learn Typescript.
