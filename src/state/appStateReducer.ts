@@ -1,6 +1,6 @@
 import { Action } from './actions'
 import { nanoid } from "nanoid"
-import { findItemIndexById } from '../utils/arrayUtils'
+import { findItemIndexById, moveItem} from '../utils/arrayUtils'
 
 // Defining context data
 export type Task = {
@@ -17,6 +17,8 @@ export type List = {
 export type AppState = {
     lists: List[]
 }
+
+
 
 // define reducer
 export const appStateReducer = (draft: AppState, action: Action): AppState | void => {
@@ -40,6 +42,16 @@ export const appStateReducer = (draft: AppState, action: Action): AppState | voi
             })
             break
         }
+
+        case "MOVE_LIST": {
+            const { draggedID, hoverID } = action.payload
+            const dragIndex = findItemIndexById(draft.lists, draggedID)
+            const hoverIndex = findItemIndexById(draft.lists, hoverID)
+            draft.lists = moveItem(draft.lists, dragIndex, hoverIndex)
+            break
+        }
+
+  
         default: {
             break
         }
