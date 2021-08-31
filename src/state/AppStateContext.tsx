@@ -5,10 +5,6 @@ import { appStateReducer, AppState, List, Task } from "./appStateReducer"
 import { DragItem } from "../DragItem"
 
 
-
-
-
-
 type AppStateContextProps = {
     draggedItem: DragItem | null
     lists: List[]
