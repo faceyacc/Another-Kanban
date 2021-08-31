@@ -1,6 +1,7 @@
 import { Action } from './actions'
 import { nanoid } from "nanoid"
 import { findItemIndexById, moveItem} from '../utils/arrayUtils'
+import { DragItem } from '../DragItem'
 
 // Defining context data
 export type Task = {
@@ -16,13 +17,19 @@ export type List = {
 
 export type AppState = {
     lists: List[]
+    draggedItem: DragItem | null;
 }
-
 
 
 // define reducer
 export const appStateReducer = (draft: AppState, action: Action): AppState | void => {
     switch(action.type) {
+
+        case "SET_DRAGGED_ITEM": {
+            draft.draggedItem = action.payload
+            break
+        }
+
         case "ADD_LIST": {
             draft.lists.push({
                 id: nanoid(),
@@ -50,8 +57,6 @@ export const appStateReducer = (draft: AppState, action: Action): AppState | voi
             draft.lists = moveItem(draft.lists, dragIndex, hoverIndex)
             break
         }
-
-  
         default: {
             break
         }
