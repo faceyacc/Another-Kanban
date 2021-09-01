@@ -44,9 +44,8 @@ export const Card = ({
                  return
              }
 
-             dispatch(
-                 moveTask(draggedItem.id, id, draggedItem.columnId, columnId)
-             )
+             dispatch(moveTask(draggedItem.id, id, draggedItem.columnId, columnId))
+             dispatch(setDraggedItem({ ...draggedItem, columnId }))
          }
      })
 
