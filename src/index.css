@@ -23,3 +23,13 @@ html {
 html, body, #root {
   height: 100%
 }
+
+header {
+  height: 4%;
+  background-color: #843fd9;
+  text-align: center;
+  color: white;
+  font-size: 25px;
+  font-family:'Lobster';
+  
+}

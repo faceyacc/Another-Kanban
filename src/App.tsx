@@ -1,5 +1,5 @@
 import React from 'react';
-import { AppContainer} from './styles';
+import { AppContainer } from './styles';
 import { AddNewItem } from './AddNewItem';
 import { Column } from './Column';
 import { useAppState } from './state/AppStateContext';
