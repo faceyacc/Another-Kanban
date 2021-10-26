@@ -12,7 +12,7 @@ jobs:
       SEMGREP_RULES: >- # more at semgrep.dev/explore
         p/security-audit
         p/secrets
-        p/ci
+        p/jwt
 
       # Scan changed files in PRs, block on new issues only (existing issues ignored)
 #       SEMGREP_BASELINE_REF: << parameters.default_branch >>
